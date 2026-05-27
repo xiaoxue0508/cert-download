@@ -283,8 +283,8 @@
 </head>
 <body>
     <header>
-        <h1>🏆 2026暑期赛事教练认证</h1>
-        <p class="subtitle">RoboRAVE & JBC & POOK</p>
+        <h1>🏆 2026暑期赛事教练认证证书</h1>
+
     </header>
     
     <div class="container">
@@ -299,7 +299,7 @@
     </div>
     
     <footer>
-        <p>如有疑问，请联系赛事组委会</p>
+        <p>如有疑问，请联系小雪老师（微信18244984493）</p>
     </footer>
     
     <!-- 模态框 -->
@@ -311,6 +311,15 @@
     
     <script src="data.js"></script>
     <script>
+        // CDN加速前缀，使用jsDelivr国内节点
+        const CDN = 'https://cdn.jsdelivr.net/gh/xiaoxue0508/cert-download@main/';
+        
+        // 获取压缩展示图路径（原图路径中插入_small）
+        function getSmallPath(path) {
+            return path.replace('certificates/roborave/', 'certificates/roborave_small/')
+                       .replace('certificates/jbc/', 'certificates/jbc_small/');
+        }
+        
         const searchInput = document.getElementById('searchInput');
         const cardsContainer = document.getElementById('cardsContainer');
         const resultCount = document.getElementById('resultCount');
@@ -357,26 +366,26 @@
                     <div class="cert-card roborave">
                         <div class="cert-header">🏆 RoboRAVE 认证教练证书</div>
                         ${item.roborave ? 
-                            `<img class="cert-image" src="${item.roborave}" alt="RoboRAVE证书" onclick="openModal('${item.roborave}')">` :
+                            `<img class="cert-image" src="${CDN + getSmallPath(item.roborave)}" alt="RoboRAVE证书" onclick="openModal('${CDN + item.roborave}')">` :
                             '<div class="cert-placeholder">📄</div>'
                         }
                         <div class="cert-footer">
                             ${item.roborave ? 
-                                `<a class="download-btn" href="${item.roborave}" download="${item.name}_RoboRAVE证书.jpg">⬇ 下载</a>` :
+                                `<a class="download-btn" href="${CDN + item.roborave}" download="${item.name}_RoboRAVE证书.jpg">⬇ 下载</a>` :
                                 '<span style="color: #999;">暂无可用</span>'
                             }
                         </div>
                     </div>
                     
                     <div class="cert-card jbc">
-                        <div class="cert-header">🎓 JBC 认证教练证书</div>
+                        <div class="cert-header">🎓 JBC认证教练证书</div>
                         ${item.jbc ? 
-                            `<img class="cert-image" src="${item.jbc}" alt="JBC证书" onclick="openModal('${item.jbc}')">` :
+                            `<img class="cert-image" src="${CDN + getSmallPath(item.jbc)}" alt="JBC证书" onclick="openModal('${CDN + item.jbc}')">` :
                             '<div class="cert-placeholder">📄</div>'
                         }
                         <div class="cert-footer">
                             ${item.jbc ? 
-                                `<a class="download-btn" href="${item.jbc}" download="${item.name}_JBC证书.jpg">⬇ 下载</a>` :
+                                `<a class="download-btn" href="${CDN + item.jbc}" download="${item.name}_JBC证书.jpg">⬇ 下载</a>` :
                                 '<span style="color: #999;">暂无可用</span>'
                             }
                         </div>
