@@ -311,22 +311,7 @@
     
     <script src="data.js"></script>
     <script>
-        // CDN加速前缀，使用jsDelivr国内节点
-        const CDN = '';  // 使用相对路径
-        
-        // 获取压缩展示图路径（原图路径中插入_small）— 仅作懒加载备用
-        function getSmallPath(path) {
-            return path.replace('certificates/roborave/', 'certificates/roborave_small/')
-                       .replace('certificates/jbc/', 'certificates/jbc_small/');
-        }
-        
-        // 懒加载：先显示base64缩略图，再异步加载高清压缩图
-        function lazyLoadImage(imgEl, hdSrc) {
-            var img = new Image();
-            img.onload = function() { imgEl.src = hdSrc; };
-            img.onerror = function() { /* 缩略图保留 */ };
-            img.src = hdSrc;
-        }
+        // 展示用压缩图，下载用原图
         
         const searchInput = document.getElementById('searchInput');
         const cardsContainer = document.getElementById('cardsContainer');
@@ -374,7 +359,7 @@
                     <div class="cert-card roborave">
                         <div class="cert-header">🏆 RoboRAVE 认证教练证书</div>
                         ${item.roborave ? 
-                            `<img class="cert-image" src="${item.roborave_thumb || ''}" alt="RoboRAVE证书" onload="lazyLoadImage(this, '${getSmallPath(item.roborave)}')" onclick="openModal('${item.roborave}')">` :
+                            `<img class="cert-image" src="${item.roborave.replace('certificates/roborave/', 'certificates/roborave_small/')}" alt="RoboRAVE证书" onclick="openModal('${item.roborave}')">` :
                             '<div class="cert-placeholder">📄</div>'
                         }
                         <div class="cert-footer">
@@ -388,7 +373,7 @@
                     <div class="cert-card jbc">
                         <div class="cert-header">🎓 JBC认证教练证书</div>
                         ${item.jbc ? 
-                            `<img class="cert-image" src="${item.jbc_thumb || ''}" alt="JBC证书" onload="lazyLoadImage(this, '${getSmallPath(item.jbc)}')" onclick="openModal('${item.jbc}')">` :
+                            `<img class="cert-image" src="${item.jbc.replace('certificates/jbc/', 'certificates/jbc_small/')}" alt="JBC证书" onclick="openModal('${item.jbc}')">` :
                             '<div class="cert-placeholder">📄</div>'
                         }
                         <div class="cert-footer">
