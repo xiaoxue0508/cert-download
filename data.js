@@ -132,7 +132,6 @@ const certData = [
   {"name": "郑先宜", "roborave": "certificates/roborave/郑先宜.jpg", "jbc": "certificates/jbc/郑先宜.jpg", "pook": ""},
   {"name": "郑惠婵", "roborave": "certificates/roborave/郑惠婵.jpg", "jbc": "certificates/jbc/郑惠婵.jpg", "pook": ""},
   {"name": "郑文华", "roborave": "certificates/roborave/郑文华.jpg", "jbc": "certificates/jbc/郑文华.jpg", "pook": ""},
-  {"name": "郑文华", "roborave": "certificates/roborave/郑文华_1.jpg", "jbc": "certificates/jbc/郑文华_2.jpg", "pook": ""},
   {"name": "郑晓欢", "roborave": "certificates/roborave/郑晓欢.jpg", "jbc": "certificates/jbc/郑晓欢.jpg", "pook": ""},
   {"name": "郭浩云", "roborave": "certificates/roborave/郭浩云.jpg", "jbc": "certificates/jbc/郭浩云.jpg", "pook": ""},
   {"name": "钟嘉裕", "roborave": "certificates/roborave/钟嘉裕.jpg", "jbc": "certificates/jbc/钟嘉裕.jpg", "pook": ""},
