@@ -71,7 +71,7 @@ input.addEventListener('input',()=>{
   clearTimeout(timer);
   timer=setTimeout(()=>{
     const q=input.value.trim();
-    if(!q){info.textContent='共 '+S.length+' 所学校 · 点击可复制';render([]);return}
+    if(!q){info.textContent='';render([]);return}
     const f=S.filter(s=>s.includes(q));
     info.textContent='找到 '+f.length+' 所学校';
     render(f,q);
