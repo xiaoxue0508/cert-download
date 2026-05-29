@@ -73,7 +73,7 @@ input.addEventListener('input',()=>{
     const q=input.value.trim();
     if(!q){info.textContent='';render([]);return}
     const f=S.filter(s=>s.includes(q));
-    info.textContent='找到 '+f.length+' 所学校';
+    info.textContent='';
     render(f,q);
   },150);
 });
