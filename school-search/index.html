@@ -42,7 +42,7 @@ h1 { text-align: center; color: #333; font-size: 22px; margin: 30px 0 20px; font
     <span class="icon">🔍</span>
     <input type="text" id="searchInput" placeholder="输入学校名称关键字，如"实验"" autofocus>
   </div>
-  <div class="info" id="info"></div>
+  <div class="info" id="info" style="display:none"></div>
   <div class="results" id="results"></div>
 </div>
 <div class="copy-toast" id="toast">已复制 ✓</div>
@@ -57,13 +57,13 @@ const toast=document.getElementById('toast');
 function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 
 function render(list, q){
-  if(!list.length){results.innerHTML='<div class="empty">没有找到匹配的学校</div>';return}
+  if(!list.length){results.innerHTML='';return}
   const re=q?new RegExp('('+esc(q)+')','gi'):'';
   results.innerHTML=list.slice(0,200).map(s=>{
     const h=re?s.replace(re,'<span class="highlight">$1</span>'):s;
     return '<div class="result-item" data-name="'+s.replace(/"/g,'&quot;')+'">'+h+'</div>';
   }).join('');
-  if(list.length>200) results.innerHTML+='<div class="empty">还有 '+list.length+' 条结果，请缩小搜索范围</div>';
+
 }
 
 let timer;
